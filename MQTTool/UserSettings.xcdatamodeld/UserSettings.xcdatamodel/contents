@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C205" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ConnectSetting" representedClassName=".ConnectSetting" syncable="YES">
+        <attribute name="clean" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hostname" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="port" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="savepassword" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sessionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="usersetting" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSetting" inverseName="connect" inverseEntity="UserSetting" syncable="YES"/>
+    </entity>
+    <entity name="PublishSetting" representedClassName=".PublishSetting" syncable="YES">
+        <attribute name="message" attributeType="String" syncable="YES"/>
+        <attribute name="qos" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="retainFlag" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="topic" attributeType="String" syncable="YES"/>
+        <relationship name="usersetting" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSetting" inverseName="publish" inverseEntity="UserSetting" syncable="YES"/>
+    </entity>
+    <entity name="SubscribeSetting" representedClassName=".SubscribeSetting" syncable="YES">
+        <attribute name="qos" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="topic" attributeType="String" syncable="YES"/>
+        <relationship name="usersetting" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSetting" inverseName="subscribe" inverseEntity="UserSetting" syncable="YES"/>
+    </entity>
+    <entity name="UserSetting" representedClassName=".UserSetting" syncable="YES">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="connect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConnectSetting" inverseName="usersetting" inverseEntity="ConnectSetting" syncable="YES"/>
+        <relationship name="publish" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PublishSetting" inverseName="usersetting" inverseEntity="PublishSetting" syncable="YES"/>
+        <relationship name="subscribe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubscribeSetting" inverseName="usersetting" inverseEntity="SubscribeSetting" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ConnectSetting" positionX="-189" positionY="-171" width="128" height="178"/>
+        <element name="PublishSetting" positionX="-180" positionY="126" width="128" height="133"/>
+        <element name="SubscribeSetting" positionX="-45" positionY="-162" width="128" height="103"/>
+        <element name="UserSetting" positionX="-18" positionY="72" width="128" height="103"/>
+    </elements>
+</model>
